@@ -8,12 +8,12 @@ export class CustomerLoginPage {
   }
 
   async open() {
-    await this.page.goto('/angularJs-protractor/BankingProject/#/customer');
+    await this.page.goto('#/customer');
   }
 
   async waitForOpened() {
     await this.page.waitForURL(
-      '/angularJs-protractor/BankingProject/#/customer',
+      '#/customer',
     );
   }
 

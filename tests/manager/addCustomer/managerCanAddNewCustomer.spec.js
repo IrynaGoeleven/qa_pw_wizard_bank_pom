@@ -37,7 +37,6 @@ test('Assert manager can add new customer', async ({ page }) => {
   await addCustomerPage.open();
   await addCustomerPage.fillCustomerForm();
   await addCustomerPage.submitCustomerForm();
-  await page.reload();
   await customersListPage.open();
   await customersListPage.assertCustomerAdded();
 });

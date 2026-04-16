@@ -9,13 +9,16 @@ export class OpenAccountPage {
   }
 
   async open() {
-    await this.page.goto(
-      '/angularJs-protractor/BankingProject/#/manager/openAccount',
-    );
+    await this.page.goto('#/manager/openAccount');
   }
 
-  async selectCustomer(customerName) {
-    await this.customerSelect.selectOption({ label: customerName });
+  async selectCustomer(customer) {
+    const fullName = `${customer.firstName} ${customer.lastName}`.replace(/\s+/g, ' ').trim();
+
+    const option = this.customerSelect.locator('option').filter({ hasText: fullName }).first();
+    const value = await option.getAttribute('value');
+
+    await this.customerSelect.selectOption(value);
   }
 
   async selectCurrency(currency) {
@@ -23,10 +26,13 @@ export class OpenAccountPage {
   }
 
   async clickProcessButton() {
+    this.page.once('dialog', async dialog => {
+      await dialog.accept();
+    });
     await this.processButton.click();
   }
 
   async assertCurrencySelected(currency) {
-    await expect(this.currencySelect).toHaveValue(currency);
+    await expect(this.currencySelect.locator('option:checked')).toHaveText(currency);
   }
 }

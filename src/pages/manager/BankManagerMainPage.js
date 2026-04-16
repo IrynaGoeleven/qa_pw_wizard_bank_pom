@@ -10,7 +10,7 @@ export class BankManagerMainPage {
   }
 
   async open() {
-    await this.page.goto('/angularJs-protractor/BankingProject/#/manager/login');
+    await this.page.goto('#/manager/login');
   }
   async clickBankManagerLogin() {
     await this.bankManagerLoginButton.click();

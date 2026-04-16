@@ -1,8 +1,5 @@
 import { test } from '@playwright/test';
-import { faker } from '@faker-js/faker';
-import { expect } from '@playwright/test';
 import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage.js';
-import { BankManagerMainPage } from '../../../src/pages/manager/BankManagerMainPage.js';
 import { CustomersListPage } from '../../../src/pages/manager/CustomersListPage.js';
 
 let customer;
