@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
-import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage';
-import { CustomerAccountPage } from '../../../src/pages/customer/CustomerAccountPage';
-import { TransactionsPage } from '../../../src/pages/customer/TransactionsPage';
+import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage.js';
+import { CustomerAccountPage } from '../../../src/pages/customer/CustomerAccountPage.js';
+import { TransactionsPage } from '../../../src/pages/customer/TransactionsPage.js';
 
 test('Assert the empty transactions list has correct values', async ({
   page,

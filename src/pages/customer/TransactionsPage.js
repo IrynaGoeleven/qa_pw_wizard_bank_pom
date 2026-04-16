@@ -3,11 +3,12 @@ import { expect } from '@playwright/test';
 export class TransactionsPage {
   constructor(page) {
     this.page = page;
-    this.tableHeader = page.getByRole('row').first();
+    this.table = page.getByRole('table');
+    this.tableHeader = this.table.getByRole('row').first();
     this.headerFirstCell = this.tableHeader.getByRole('cell').nth(0);
     this.headerSecondCell = this.tableHeader.getByRole('cell').nth(1);
     this.headerThirdCell = this.tableHeader.getByRole('cell').nth(2);
-    this.firstRow = page.getByRole('row').nth(1);
+    this.firstRow = this.table.getByRole('row').nth(1);
     this.firstRowAmountCell = this.firstRow.getByRole('cell').nth(1);
     this.firstRowTypeCell = this.firstRow.getByRole('cell').nth(2);
   }

@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
-import { BankHomePage } from '../../../src/pages/BankHomePage';
-import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage';
-import { CustomerAccountPage } from '../../../src/pages/customer/CustomerAccountPage';
+import { BankHomePage } from '../../../src/pages/BankHomePage.js';
+import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage.js';
+import { CustomerAccountPage } from '../../../src/pages/customer/CustomerAccountPage.js';
 
 test('Assert correct customer Logout', async ({ page }) => {
   /* 

@@ -1,5 +1,3 @@
-import { expect } from '@playwright/test';
-
 export class BankHomePage {
   constructor(page) {
     this.page = page;
@@ -9,7 +7,7 @@ export class BankHomePage {
   }
 
   async open() {
-    await this.page.goto('/angularJs-protractor/BankingProject/#/login');
+    await this.page.goto('#/login');
   }
 
   async clickCustomerLoginButton() {

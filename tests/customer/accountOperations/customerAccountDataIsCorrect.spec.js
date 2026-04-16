@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
-import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage';
-import { CustomerAccountPage } from '../../../src/pages/customer/CustomerAccountPage';
+import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage.js';
+import { CustomerAccountPage } from '../../../src/pages/customer/CustomerAccountPage.js';
 
 test('Assert customer has correct bank data', async ({ page }) => {
   /* 

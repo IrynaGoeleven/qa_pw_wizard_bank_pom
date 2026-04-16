@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import { faker } from '@faker-js/faker';
-import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage';
-import { CustomerAccountPage } from '../../../src/pages/customer/CustomerAccountPage';
+import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage.js';
+import { CustomerAccountPage } from '../../../src/pages/customer/CustomerAccountPage.js';
 
 test('Assert the customer cannot withdraw money with empty balance', async ({
   page,

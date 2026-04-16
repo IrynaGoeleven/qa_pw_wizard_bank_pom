@@ -5,8 +5,11 @@ export class CustomersListPage {
     this.page = page;
     this.customerData = customerData;
 
-    this.rows = page.locator('table tbody tr');
+    this.customersButton = page.getByRole('button', { name: 'Customers' });
     this.searchCustomerInput = page.getByRole('textbox', { name: 'Search Customer' });
+
+    this.customersTable = page.locator('table');
+    this.rows = this.customersTable.locator('tbody tr');
   }
 
   async open() {
@@ -14,9 +17,10 @@ export class CustomersListPage {
   }
 
   customerRow() {
-    return this.rows.filter({
-      hasText: `${this.customerData.firstName} ${this.customerData.lastName} ${this.customerData.postCode}`,
-    });
+    return this.rows
+      .filter({ has: this.page.locator('td', { hasText: this.customerData.firstName }) })
+      .filter({ has: this.page.locator('td', { hasText: this.customerData.lastName }) })
+      .filter({ has: this.page.locator('td', { hasText: this.customerData.postCode }) });
   }
 
   async assertCustomerAdded() {

@@ -13,12 +13,11 @@ export class OpenAccountPage {
   }
 
   async selectCustomer(customer) {
-    const fullName = `${customer.firstName} ${customer.lastName}`.replace(/\s+/g, ' ').trim();
+    const fullName = `${customer.firstName} ${customer.lastName}`
+      .replace(/\s+/g, ' ')
+      .trim();
 
-    const option = this.customerSelect.locator('option').filter({ hasText: fullName }).first();
-    const value = await option.getAttribute('value');
-
-    await this.customerSelect.selectOption(value);
+    await this.customerSelect.selectOption({ label: fullName });
   }
 
   async selectCurrency(currency) {
